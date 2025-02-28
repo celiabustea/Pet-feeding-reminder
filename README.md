@@ -47,9 +47,6 @@ Note: If you haven't installed Expo Go on your mobile device, download it from t
 - More customization options for reminders.
 - Integration with smart pet feeders.
 
-## Contact
-For any inquiries, feel free to reach out at **busteacarmina@gmail.com**.
-
 <img src="https://github.com/user-attachments/assets/06236d7d-2025-4e55-93e1-69acdd24a606" width="300" />
 <img src="https://github.com/user-attachments/assets/e68577da-e378-41c5-aedb-401da7c0d9cb" width="300" />
 <img src="https://github.com/user-attachments/assets/fd8e579f-5d62-4a6b-9aaa-1e6464680951" width="300" />
