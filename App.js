@@ -6,7 +6,7 @@ import IconSelectionModal from './IconSelectionModal';
 import CatItem from './CatItem';
 import { loadCats, saveCats } from './storage';
 import EditCatModal from './EditCatModal';
-import CatProfileModal from './CatProfileModal';  // Import your CatProfileModal
+import CatProfileModal from './CatProfileModal';  
 import * as Animatable from 'react-native-animatable';
 
 const CATS_STORAGE_KEY = '@cats';
@@ -22,8 +22,8 @@ export default function App() {
   const [catToRemove, setCatToRemove] = useState('');
   const [selectedIcon, setSelectedIcon] = useState(null);
   const [editModalVisible, setEditModalVisible] = useState(false);
-  const [selectedCat, setSelectedCat] = useState(null);  // To hold the cat being edited
-  const [profileModalVisible, setProfileModalVisible] = useState(false); // Modal visibility for profile
+  const [selectedCat, setSelectedCat] = useState(null);  
+  const [profileModalVisible, setProfileModalVisible] = useState(false); 
 
   const icons = [
     require('./assets/black-cat.png'),
@@ -50,13 +50,13 @@ export default function App() {
     const updatedCats = cats.map((cat) =>
         cat.id === updatedCat.id ? updatedCat : cat
     );
-    setCats(updatedCats); // Update the list of cats
-    setSelectedCat(updatedCat); // Update the selected cat for the profile modal
-    setEditModalVisible(false); // Close the edit modal
+    setCats(updatedCats); 
+    setSelectedCat(updatedCat); 
+    setEditModalVisible(false); 
   };
 
 
-  const [catBirthday, setCatBirthday] = useState(''); // State for birthday
+  const [catBirthday, setCatBirthday] = useState('');
 
 
   const addCat = () => {
@@ -67,7 +67,7 @@ export default function App() {
         food: catFood,
         times: feedingTimes,
         icon: selectedIcon,
-        birthday: catBirthday, // Ensure the birthday is included
+        birthday: catBirthday, 
       };
       setCats([...cats, newCat]);
       setAddModalVisible(false);
@@ -79,14 +79,12 @@ export default function App() {
 
 
   const removeCat = () => {
-    const trimmedName = catToRemove.trim().toLowerCase(); // Normalize input
+    const trimmedName = catToRemove.trim().toLowerCase(); 
     const updatedCats = cats.filter((cat) => cat.name.trim().toLowerCase() !== trimmedName);
 
     if (updatedCats.length === cats.length) {
-      // No match found
       alert(`No cat found with the name "${catToRemove}".`);
     } else {
-      // Match found, update state
       setCats(updatedCats);
       setRemoveModalVisible(false);
       setCatToRemove('');
@@ -105,8 +103,8 @@ export default function App() {
   };
 
   const openProfileModal = (cat) => {
-    setSelectedCat(cat); // Set the selected cat to show its profile
-    setProfileModalVisible(true); // Show the profile modal
+    setSelectedCat(cat); 
+    setProfileModalVisible(true); 
   };
 
   const closeProfileModal = () => {
@@ -128,15 +126,15 @@ export default function App() {
           {cats.map((item) => (
               <Animatable.View
                   key={item.id}
-                  animation="fadeIn"   // Animation type
-                  duration={1000}       // Animation duration
-                  delay={200}           // Delay before the animation starts
+                  animation="fadeIn"   
+                  duration={1000}       
+                  delay={200}           
               >
               <CatItem
                   key={item.id}
                   cat={item}
                   onPress={() => openProfileModal(item)}
-                  onEdit={() => openEditCatModal(item)} // Open edit modal on edit
+                  onEdit={() => openEditCatModal(item)} 
               />
               </Animatable.View>
 
@@ -186,7 +184,7 @@ export default function App() {
             visible={profileModalVisible}
             onClose={closeProfileModal}
             cat={selectedCat}
-            onEditProfile={() => openEditCatModal(selectedCat)} // Open edit modal
+            onEditProfile={() => openEditCatModal(selectedCat)} 
         />
 
 
