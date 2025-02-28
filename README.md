@@ -28,10 +28,15 @@ Pet Feeding Reminder is a React Native application designed to help pet owners k
    ```sh
    npm install
    ```
-4. Start the application:
-   ```sh
-   expo start
-   ```
+4. Since this app is built with Expo, make sure you have Expo CLI installed. If you don't have it, install Expo CLI globally:
+```sh
+npm install -g expo-cli
+```
+5. Start the application:
+```sh
+expo start
+```
+Note: If you haven't installed Expo Go on your mobile device, download it from the app store (available on both iOS and Android). Scan the QR code in your terminal or browser to open the app on your device.
 
 ## Usage
 - Open the app and add pets by selecting an icon and entering a name.
